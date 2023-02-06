@@ -48,8 +48,10 @@ function round(user,computer){
     }
 
     else if (user == computer) {
-        console.log (`It's a tie, you both chose ${user} and get 0 points`);
+        console.log (`It's a tie!, you both chose ${user}`);
     }
+    score =  `Player: ${userScore}     VS      Computer: ${computerScore}`;
+    content.textContent = score;
 }
 
 
@@ -59,6 +61,7 @@ document.getElementById("scissors").addEventListener("click",function(){
 
 document.getElementById("paper").addEventListener("click",function(){
     round("Paper", getComputerChoice());
+    console.log(score);
 });
 
 document.getElementById("rock").addEventListener("click",function(){
