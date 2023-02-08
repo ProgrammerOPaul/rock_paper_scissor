@@ -14,9 +14,9 @@ content.classList.add('content');
 content.textContent = score;
 text.appendChild(content);
 
-// const restart = document.createElement('button');
-// restart.classList.add("restart");
-// restart.textContent = "reset";
+const restart = document.createElement('button');
+restart.classList.add("restart");
+restart.textContent = "reset";
 
 // This returns a choice for the computer
 function getComputerChoice(){
@@ -77,7 +77,7 @@ function round(user,computer){
         }
         content.textContent = score;
         result.textContent = resultCount;
-        // text.appendChild(restart); 
+        text.appendChild(restart); 
         return;
     }
 
