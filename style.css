@@ -17,4 +17,11 @@ body{
     gap: 15px;
 }
 
+#text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
