@@ -14,9 +14,9 @@ content.classList.add('content');
 content.textContent = score;
 text.appendChild(content);
 
-const restart = document.createElement('button');
-restart.classList.add("restart");
-restart.textContent = "reset";
+const anotherRound = document.createElement('button');
+anotherRound.setAttribute("id","again");
+anotherRound.textContent = "reset";
 
 // This returns a choice for the computer
 function getComputerChoice(){
@@ -77,7 +77,10 @@ function round(user,computer){
         }
         content.textContent = score;
         result.textContent = resultCount;
-        text.appendChild(restart); 
+        text.appendChild(anotherRound); 
+        document.getElementById("again").addEventListener("click", function(){
+            reset();
+        });
         return;
     }
 
@@ -86,12 +89,15 @@ function round(user,computer){
     result.textContent = resultCount;
 }
 
-// function restart(){
-//     resultCount = ''
-//     userScore = 0;
-//     computerScore = 0;
-//     score =  `Player: ${userScore}     VS      Computer: ${computerScore}`;
-// }
+function reset(){
+    resultCount = '';
+    userScore = 0;
+    computerScore = 0;
+    score =  `Player: ${userScore}     VS      Computer: ${computerScore}`;
+    content.textContent = score;
+    result.textContent = resultCount;
+    text.removeChild(anotherRound);
+}
 
 
 document.getElementById("scissors").addEventListener("click",function(){
@@ -100,10 +106,11 @@ document.getElementById("scissors").addEventListener("click",function(){
 
 document.getElementById("paper").addEventListener("click",function(){
     round("Paper", getComputerChoice());
-    console.log(score);
 });
 
 document.getElementById("rock").addEventListener("click",function(){
     round("Rock", getComputerChoice());
 });
+
+
 
