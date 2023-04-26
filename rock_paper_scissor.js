@@ -20,16 +20,16 @@ anotherRound.textContent = "reset";
 
 // This returns a choice for the computer
 function getComputerChoice() {
-  const choice = ["Rock", "Paper", "Scissors"];
+  const choice = ["Rock", "Paper", "Scissors"];  
   const move = Math.floor(Math.random() * 3);
   return choice[move];
 }
 
-function reset() {
+function reset()    {
   resultCount = "";
   userScore = 0;
-  computerScore = 0;
-  score = `Player: ${userScore}     VS      Computer: ${computerScore}`;
+  computerScore = 0;  
+  score = `Player: ${userScore}       VS      Computer: ${computerScore}`;
   content.textContent = score;
   result.textContent = resultCount;
   text.removeChild(anotherRound);
@@ -81,7 +81,6 @@ function round(user, computer) {
     });
     return;
   }
-
   score = `Player: ${userScore}     VS      Computer: ${computerScore}`;
   content.textContent = score;
   result.textContent = resultCount;
